@@ -1,0 +1,65 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <link rel="icon" th:href="@{/img/icon.png}" type="image/x-icon" />
+  <title>CRUD Jugadores</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}">
+</head>
+<body>
+<div class='container'>
+
+  <div id="content">
+    <main>
+      <!-- Contenido -->
+      <div class="page-header text-center">
+        <h1>Lista de Jugadores</h1>
+      </div>
+      <div class="container-fluid">
+
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{/jugador/nuevo}">Nuevo Jugador</a>
+
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Posicion</th>
+            <th>Club</th>
+            <th>Seleccion</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="jugador,info:${lista}">
+            <td th:text="${info.index + 1}"></td>
+            <td th:text="${jugador.nombre}"></td>
+            <td th:text="${jugador.edad}"></td>
+            <td th:text="${jugador.posicion}"></td>
+            <td th:text="${jugador.club}"></td>
+            <td th:text="${jugador.seleccion}"></td>
+            <td><a class="btn btn-danger" th:href="@{'/jugador/borrar?id=' + ${jugador.idjugador}}">Borrar</a></td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <!-- /Contenido -->
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Colocar # Grupo - PUCP @ 2022</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title>Jugadores</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/fontawesome-all.min.css}">
+</head>
+<body>
+
+  <div id="content">
+    <main>
+      <!-- Contenido -->
+      <div class="container">
+        <div class="page-header text-center">
+          <h2>Nuevo Jugador</h2>
+        </div>
+        <div class="container-fluid">
+          <form method="post" th:action="@{/jugador/guardar}">
+            <div class="mb-3">
+              <label for="nombre">Nombre</label>
+              <input name="nombre" type="text" class="form-control" id="nombre">
+            </div>
+            <div class="mb-3">
+              <label for="edad">Edad</label>
+              <input name="edad" type="text" class="form-control" id="edad">
+            </div>
+            <div class="mb-3">
+              <label for="posicion">Posicion</label>
+              <input name="posicion" type="text" class="form-control" id="posicion">
+            </div>
+            <div class="mb-3">
+              <label for="club">Club</label>
+              <input name="club" type="text" class="form-control" id="club">
+            </div>
+            <div class="mb-3">
+              <label for="seleccion">Seleccion Nacional</label>
+              <input name="seleccion" type="text" placeholder="Peru" class="form-control" id="seleccion">
+            </div>
+            <a th:href="@{/jugador/listar}" class="btn btn-danger">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <!-- /Contenido -->
+  <footer class="py-4 bg-light mt-auto">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-between small">
+        <div class="text-muted">Colocar # Grupo - PUCP @ 2023</div>
+      </div>
+    </div>
+  </footer>
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
